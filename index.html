@@ -42,12 +42,12 @@ html, body {
   document.body.style.background = hexColor;
   var clockFace = hours+":"+minutes+":"+seconds;
   document.getElementById('clock').innerHTML = clockFace;
-  setTimeout(function() {
-    colorClock();
-   }, 1000);
+  
   //console.log(clockFace);
 };
-colorClock();
+setTimeout(function() {
+    colorClock();
+   }, 1000);
 </script>
 <div id="clock">12:13:14</div>
 </body>
