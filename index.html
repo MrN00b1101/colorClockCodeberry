@@ -19,11 +19,8 @@ html, body {
   margin-top: -34px;
 }
 </style>
-</head>
-<body>
-<div id="clock">12:13:14</div>
-<script id="jsbin-javascript">
-function colorClock(){
+<script>
+  function colorClock(){
   var date = new Date();
   var hours = date.getHours();
   var minutes = date.getMinutes();
@@ -49,45 +46,8 @@ function colorClock(){
 }
 colorClock();
 </script>
-
-
-<script id="jsbin-source-css" type="text/css">
-html, body {
-  height: 100%;
-}
-#clock {
-  font-family: 'Exo 2', sans-serif;
-  text-align: center;
-  position: relative;
-  top: 50%;
-  font-size: 68px;
-  margin-top: -34px;
-}
-</script>
-
-<script id="jsbin-source-javascript" type="text/javascript">function colorClock(){
-  var date = new Date();
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var seconds = date.getSeconds();
-  
-  if (hours < 10) {
-    hours = '0' + seconds;
-  }
-  if (minutes < 10) {
-    minutes = '0' + seconds;
-  }
-  if (seconds < 10) {
-    seconds = '0' + seconds;
-  }
-  var hexColor = '#' + hours + minutes + seconds;
-  document.body.style.background = hexColor;
-  var clockFace = hours+":"+minutes+":"+seconds;
-  document.getElementById('clock').innerHTML = clockFace;
-  setTimeout(function() {
-  colorClock();
-}, 1000);
-  //console.log(clockFace);
-}
-colorClock();</script></body>
+</head>
+<body>
+<div id="clock">12:13:14</div>
+</body>
 </html>
