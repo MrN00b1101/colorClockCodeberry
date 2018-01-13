@@ -19,8 +19,11 @@ html, body {
   margin-top: -34px;
 }
 </style>
-<script>
-  function colorClock(){
+</head>
+<body>
+<div id="clock">12:13:14</div>
+<script id="jsbin-javascript">
+function colorClock(){
   var date = new Date();
   var hours = date.getHours();
   var minutes = date.getMinutes();
@@ -29,7 +32,7 @@ html, body {
   if (hours < 10) {
     hours = '0' + hours;
   }
-  if (minutes < 10) {
+  if (minutes <= 9) {
     minutes = '0' + minutes;
   }
   if (seconds < 10) {
@@ -39,16 +42,52 @@ html, body {
   document.body.style.background = hexColor;
   var clockFace = hours+":"+minutes+":"+seconds;
   document.getElementById('clock').innerHTML = clockFace;
-  
+  setTimeout(function() {
+  colorClock();
+}, 1000);
   //console.log(clockFace);
-};
-setTimeout(function() {
-    colorClock();
-   }, 1000);
+}
+colorClock();
 </script>
-</head>
-<body>
+
+
+<script id="jsbin-source-css" type="text/css">
+html, body {
+  height: 100%;
+}
+#clock {
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  font-size: 68px;
+  margin-top: -34px;
+}
+</script>
+
+<script id="jsbin-source-javascript" type="text/javascript">function colorClock(){
+  var date = new Date();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
   
-<div id="clock">12:13:14</div>
-</body>
+  if (hours < 10) {
+    hours = '0' + hours;
+  }
+  if (minutes <= 9) {
+    minutes = '0' + minutes;
+  }
+  if (seconds < 10) {
+    seconds = '0' + seconds;
+  }
+  var hexColor = '#' + hours + minutes + seconds;
+  document.body.style.background = hexColor;
+  var clockFace = hours+":"+minutes+":"+seconds;
+  document.getElementById('clock').innerHTML = clockFace;
+  setTimeout(function() {
+  colorClock();
+}, 1000);
+  //console.log(clockFace);
+}
+colorClock();</script></body>
 </html>
